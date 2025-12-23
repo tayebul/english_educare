@@ -6,6 +6,10 @@
     font-family: "Hind Siliguri", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth ;
+}
+
 .active{
     background-color: #422AD5;
     color: white;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,13 +48,15 @@
                 </div>
                 
                 <!-- right most -->
+
                 <div class="navbar-end hidden lg:flex">
+
                   <ul class="menu menu-horizontal px-1 gap-3">
-                    <li class="border-2 border-blue-900 rounded-[6px] text-blue-900 font-bold hover:bg-blue-100 ">
-                      <a href=""><i class="fa-solid fa-circle-question"></i> FAQ</a>
+                    <li  class="border-2 border-blue-900 rounded-[6px] text-blue-900 font-bold hover:bg-blue-100  ">
+                      <a href="#faq_section"><i class="fa-solid fa-circle-question"></i> FAQ</a>
                     </li>
                     <li class="border-2 border-blue-900 rounded-[6px] text-blue-900 font-bold hover:bg-blue-100 ">
-                      <a href=""><i class="fa-solid fa-circle-info"></i> About Us</a>
+                      <a href="#footer"><i class="fa-solid fa-circle-info"></i> About Us</a>
                     </li>
                     <li  class="border-2 border-blue-900 rounded-[6px] text-blue-900 p-1 font-bold hover:bg-blue-100 ">
                         <button id="logout_btn" > <i class="fa-solid fa-right-from-bracket"></i> Logout</button>
@@ -69,10 +71,10 @@
     <div class=" mt-9 lg:hidden">
       <ul class="flex justify-center gap-5 ">
         <li class="border-2 border-blue-900 rounded-[6px] text-blue-900 p-1 font-bold hover:bg-blue-100 ">
-          <a href=""><i class="fa-solid fa-circle-question"></i> FAQ</a>
+          <a href="#faq_section"><i class="fa-solid fa-circle-question"></i> FAQ</a>
         </li>
         <li class="border-2 border-blue-900 rounded-[6px] text-blue-900 p-1 font-bold hover:bg-blue-100 ">
-          <a href=""><i class="fa-solid fa-circle-info"></i> About Us</a>
+          <a href="#footer"><i class="fa-solid fa-circle-info"></i> About Us</a>
         </li>
         <li  class="border-2 border-blue-900 rounded-[6px] text-blue-900 p-1 font-bold hover:bg-blue-100 ">
           <button id="logout_btn_responsive" > <i class="fa-solid fa-right-from-bracket"></i> Logout</button>
@@ -91,8 +93,37 @@
     
     <section class="mid_part ">
         <div class=" mt-[70px] lg:mt-[110px] "> <p class="font-bold text-[35px] text-center lg:text-3xl"><span class="text-[#a1f7f7]">Let's</span> Learn Vocabularies</p> </div>
-            <div id="level_container" class="grid grid-cols-3 p-5 mx-auto lg:flex justify-center gap-3 mt-5">   
+        
+
+        <!-- search button -->
+        <section class="flex justify-center items-center my-7">
+          <div class="join">
+          <div>
+            <label class="input validator join-item">
+                <span><i class="fa-solid fa-magnifying-glass text-gray-400"></i></span>
+              <input id="input_search" type="email" placeholder="SEARCH FOR WORD" required class="focus:outline-0 focus:ring-0"  />
+            </label>
+            <div class="validator-hint hidden"></div>
+          </div>
+          <button id="btn_search" class="btn btn-neutral join-item bg-blue-300 border-0">Search</button>
+        </div>
+
+        <!-- levels -->
+      </section>
+            <div id="level_container" class="grid grid-cols-3 p-5 mx-auto lg:flex justify-center gap-3 mt-5 ">   
             </div>
+    </section>
+
+    
+      <!-- spin animation -->
+    <section id="spin" class=" hidden flex justify-center items-center mt-3" >
+      
+      <span class="loading loading-ring loading-xs"></span>
+      <span class="loading loading-ring loading-sm"></span>
+      <span class="loading loading-ring loading-md"></span>
+      <span class="loading loading-ring loading-lg"></span>
+      <span class="loading loading-ring loading-xl"></span>
+
     </section>
 
     <section id="word_container" class=" bg-gray-100 p-8 w-11/12 mx-auto my-10 flex flex-col gap-5 lg:grid grid-cols-3  ">
@@ -102,12 +133,27 @@
         <h2 class="text-[30px] text-gray-600 font-semibold">একটি Lesson Select করুন।</h2>
       </div>
 
-      <!-- modal for info  -->
+    </section>
+
+          <!-- modal for showing details  -->
 <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
 <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
   <div class="modal-box">
-    <h3 class="text-lg font-bold">Hello!</h3>
-    <p class="py-4">Press ESC key or click the button below to close</p>
+    <div id="details_container">
+      <!-- <div>
+        <h2 class="font-extrabold text-[20px]"> word ( <i class="fa-solid fa-microphone-lines"></i> : prons  ) </h2>
+        <p class="font-bold">Meaning</p>
+        <p>mean</p>
+        <p class="font-bold">Example</p>
+        <p>exmp</p>
+        <div>
+          <h3 class="text-[20px]">Synonyms</h3>
+          <span class="btn">dd</span>
+          <span class="btn">ss</span>
+          <span class="btn">aa</span>
+        </div>
+      </div> -->
+    </div>
     <div class="modal-action">
       <form method="dialog">
         <!-- if there is a button in form, it will close the modal -->
@@ -118,9 +164,64 @@
 </dialog>
 
 
-    </section>
 
+<section id="faq_section">
 
+  <div class=" mt-[70px] lg:mt-[110px] "> <p class="font-bold text-[35px] text-center lg:text-3xl"><span class="text-[#a1f7f7]">Frequently</span> Asked Questions</p> </div>
+
+  <div class="mx-20 my-12 space-y-4">
+    <div class="collapse collapse-plus bg-base-100 border border-base-300">
+      <input type="radio" name="my-accordion-3" checked="checked" />
+      <div class="collapse-title font-semibold">How can I start learning English on this website?</div>
+      <div class="collapse-content text-sm">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</div>
+    </div>
+    <div class="collapse collapse-plus bg-base-100 border border-base-300">
+      <input type="radio" name="my-accordion-3" />
+      <div class="collapse-title font-semibold">Is this website free to use?</div>
+      <div class="collapse-content text-sm">Yes. This website is absolutely free to use.However, we have a plan to implement a premium membership in future.</div>
+    </div>
+    <div class="collapse collapse-plus bg-base-100 border border-base-300">
+      <input type="radio" name="my-accordion-3" />
+      <div class="collapse-title font-semibold">Do I need to create an account?</div>
+      <div class="collapse-content text-sm">For next one year, you don't. But not forever.</div>
+    </div>
+    <div class="collapse collapse-plus bg-base-100 border border-base-300">
+      <input type="radio" name="my-accordion-3" />
+      <div class="collapse-title font-semibold">4. How can I build my English vocabulary?</div>
+      <div class="collapse-content text-sm">Be regular, finish all your lessons, focus on vocabularies, speak & write more. Most importantly - STAY WITH ENGLISH EDUCARE</div>
+    </div>
+
+    <div class="collapse collapse-plus bg-base-100 border border-base-300">
+      <input type="radio" name="my-accordion-3" />
+      <div class="collapse-title font-semibold">Do you offer certificates for completed courses?</div>
+      <div class="collapse-content text-sm">As we are running for free now , there are no facilities for achieving certificate . However, after the premium membership is on, we will start providing certificates under certain tasks and conditions.</div>
+    </div>
+  </div>
+        
+
+</section>
+
+<section id="footer" class="border-t-2 border-red-400 px-4 py-[60px] flex justify-between items-center lg:items-end">
+
+<div class=" w-60 lg:w-auto">
+     <div class="flex items-center"><span class="font-bold text-lg">English</span>
+      <img src="./images/logo.png" alt="">
+      <span class="font-bold text-lg bangla_font">এডুকেয়ার</span></div>  
+      <h2 class="bangla_font font-medium  text-gray-800">ইংরেজি শিখুন সহজে</h2>
+      <p class="text-[15px] text-gray-700">Providing ED-Tech Applications since 2024</p>  
+</div>
+
+<div class="">
+  <p class="text-[12px] font-semibold text-gray-500 text-center">FOLLOW US</p>
+  <div> 
+    <span class="text-[20px]"><i class="fa-brands fa-facebook"></i></span>
+    <span class="text-[20px]"><i class="fa-brands fa-square-twitter"></i></span>
+    <span class="text-[20px]"><i class="fa-brands fa-linkedin"></i></span>
+
+  </div>
+</div>
+
+</section>
 
 
 
